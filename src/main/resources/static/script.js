@@ -1,3 +1,4 @@
+//check
 async function updateNextAppointment() {
     const patientId = localStorage.getItem('patientEntityId');
     const nextAppointmentInfo = document.getElementById('next-appointment-info');
@@ -8,7 +9,7 @@ async function updateNextAppointment() {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/api/appointments/patient/${patientId}`);
+        const response = await fetch(`/api/appointments/patient/${patientId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch appointments.');
         }
@@ -44,7 +45,7 @@ async function loadPatientHistory() {
     }
 
     try {
-       const patientResponse = await fetch(`http://localhost:8080/api/patients/user/${userId}/history`);
+       const patientResponse = await fetch(`/api/patients/user/${userId}/history`);
         if (!patientResponse.ok) {
             throw new Error('Failed to fetch patient history.');
         }
@@ -59,7 +60,7 @@ async function loadPatientHistory() {
 
         html += '<hr><h3>Appointment History</h3>';
 
-        const appointmentsResponse = await fetch(`http://localhost:8080/api/appointments/patient/${patientEntityId}`);
+        const appointmentsResponse = await fetch(`/api/appointments/patient/${patientEntityId}`);
         if (!appointmentsResponse.ok) {
             throw new Error('Failed to fetch appointments.');
         }
@@ -261,5 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
 
 
