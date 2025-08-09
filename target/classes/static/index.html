@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Cure</title>
+    <link rel="stylesheet" href="Stylings.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="update.js"></script>
+    <script src="doctor.js"></script>
+    <script src="dom.js"></script>
+    <script src="admin.js"></script>
+    <script src="script.js"></script>
+    <script src="pageRoute.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="#" onclick="showPage('home')">
+                <img src="images/Cosmic Cure.png" alt="Csmic Cure Logo" class="logo-img"></a>
+            <a href="#" onclick="showPage('home')">
+                <h1 class="site-title">Cosmic Cure</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li class="dropdown-container">
+                    <a href="#" class="nav-link">
+                        Register
+                        <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" onclick="showPage('patient-registration')">Patient Registration</a>
+                        <a href="#" onclick="showPage('doctor-registration')">Doctor Registration</a>
+                        <a href="#" onclick="showPage('admin-pharmacist-registration')">Staff Registration</a>
+                    </div>
+                </li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('doctors')">Heroes</a></li>
+                <li><a href="#" onclick="showPage('login')">Log In</a></li>
+                <li><a href="#" onclick="showPage('about')">About Us</a></li>
+            </ul>
+        </nav>
+          <button id="theme-toggle" class="theme-toggle-button" title="Toggle dark mode">
+            <svg id="theme-icon-sun" class="theme-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <svg id="theme-icon-moon" class="theme-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+    </header>
+    <main class="main-content-area">
+        <section id="home" class="page-section">
+            <div class="hero-slideshow-wrapper">
+                <div class="slideshow-container">
+                    <div class="slide">
+                        <img src="images/hostipal 1.jpg" alt="Hospital 1 img" class="slide-image">
+                    </div>
+                    <div class="slide ">
+                        <img src="images/hospital 2.jpg" alt="Hospital 2img" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/hospital 3.jpg" alt="Hospital 3 img" class="slide-image">
+                    </div>
+
+                    <div class="hero-text-overlay">
+                        <h2 class="hero-main-title">
+                            Cosmic Cure: The Care You Need
+                        </h2>
+                        <p class="hero-tagline">
+                            Where cutting-edge medical science meets healing
+                        </p>
+                        <button class="hero-cta-button animated-button" onclick="showPage('patient-registration')">
+                            Book an Appointment Today!
+                        </button>
+                    </div>
+                    <div class="dots-navigation-container">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="content-block  ">
+                <h3 class="block-title">Our Leading Specialists</h3>
+                <div class="grid-layout doctors-detailed-grid  specialists-grid">
+                    <div class="info-card card-hover-effect card-entry-animation">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Shaon" alt="Dr. Shaon Ahmed"
+                            class="profile-image doctor-image-animate">
+                        <h4 class="card-name">Dr. Shaon Ahmed</h4>
+                        <p class="card-specialty">Cardiologist <span>❤️</span></p>
+                        <p class="card-info">Specializing in advanced cardiac care and preventive cardiology.</p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.1s;">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Kanika" alt="Dr. Kanika Rahman"
+                            class="profile-image doctor-image-animate">
+                        <h4 class="card-name">Dr. Kanika Rahman</h4>
+                        <p class="card-specialty">Pediatrician <span>👶</span></p>
+                        <p class="card-info">Dedicated to the health and well-being of children from infancy to
+                            adolescence.</p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Omar" alt="Dr. Omar"
+                            class="profile-image doctor-image-animate">
+                        <h4 class="card-name">Dr. Omar</h4>
+                        <p class="card-specialty">Neurologist <span>🧠</span></p>
+                        <p class="card-info">Expert in treating neurological disorders and brain health.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-block services-overview-grid">
+                <h3 class="block-title">Our Comprehensive Services</h3>
+                <div class="grid-layout doctors-detailed-grid  specialists-grid">
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.3s;">
+                        <span class="icon-emoji">🔬</span>
+                        <h4 class="card-name">Advanced Diagnostics</h4>
+                        <p class="card-info">State-of-the-art imaging and laboratory services for accurate diagnoses.
+                        </p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.4s;">
+                        <span class="icon-emoji">🩹</span>
+                        <h4 class="card-name">Emergency Care</h4>
+                        <p class="card-info">24/7 emergency services with a dedicated team of trauma specialists.</p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.5s;">
+                        <span class="icon-emoji">👶</span>
+                        <h4 class="card-name">Maternity & Child Health</h4>
+                        <p class="card-info">Comprehensive care for mothers and children, from prenatal to pediatric.
+                        </p>
+
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.6s;">
+                        <span class="icon-emoji">💊</span>
+                        <h4 class="card-name">Pharmacy Services</h4>
+                        <p class="card-info">On-site pharmacy with a wide range of medications and expert pharmacists.
+                        </p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.7s;">
+                        <span class="icon-emoji">🧠</span>
+                        <h4 class="card-name">Neurology & Neurosurgery</h4>
+                        <p class="card-info">Specialized care for brain, spine, and nervous system disorders.</p>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.8s;">
+                        <span class="icon-emoji">♿</span>
+                        <h4 class="card-name">Rehabilitation Services</h4>
+                        <p class="card-info">Physical therapy, occupational therapy, and speech therapy for recovery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-block news-updates-block">
+                <h3 class="block-title">Latest News & Updates</h3>
+                <div class="grid-layout news-updates-grid">
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.9s;">
+                        <h4 class="card-name">Cosmic Cure Launches New Telemedicine Platform</h4>
+                        <p class="card-info news-item-info">
+                            <span>📰</span> We're excited to announce the launch of our state-of-the-art
+                            telemedicine platform, bringing quality healthcare closer to you.
+                        </p>
+                        <a href="#" class="read-more-link">Read More &rarr;</a>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 1s;">
+                        <h4 class="card-name">Understanding the Importance of Regular Check-ups</h4>
+                        <p class="card-info ">
+                            <span>💡</span> Our experts share insights on why preventive health
+                            check-ups are vital for long-term well-being.
+                        </p>
+                        <a href="#" class="read-more-link">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="patient-registration" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Patient Registration</h2>
+                <p class="page-intro-text">Please fill out the form below to register as a new patient.</p>
+                <form action="" class="styled-form">
+                    <div class="form-filed-group">
+                        <label for="patient-name">Full Name</label>
+                        <input type="text" id="patient-name" name="patient-name" placeholder="Shoikot Jaman">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="patient-email">Email Address</label>
+                        <input type="email" id="patient-email" name="patient-email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="patient-dob">Date of Birth</label>
+                        <input type="date" id="patient-dob" name="patient-dob">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="patient-gender">Gender</label>
+                        <select id="patient-gender" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="ohter">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="patient-phone">Phone Number</label>
+                        <input type="tel" id="patient-phone" name="phone" placeholder="e.g. +88023456734">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="123 Main Street">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="patient-password">Password</label>
+                        <input type="password" id="patient-password" name="patient-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="appointment-date">Preferred Appointment Date</label>
+                        <input type="date" id="appointment-date" name="appointment-date">
+                    </div>
+                    
+                    <div class="form-field-group">
+                        <label for="reason">Reason for Visit</label>
+                        <textarea id="reason" name="reason" rows="4"
+                            placeholder="Briefly describe your issue..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="form-button-submit animated-button gradient-blue-green">Register</button>
+                </form>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+
+        </section>
+        <section id="doctor-registration" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Doctor Registration</h2>
+                <p class="page-intro-text">For medical professionals joining Cosmic Cure.</p>
+                <form class="styled-form">
+                    <div class="form-field-group">
+                        <label for="doc-name">Full Name</label>
+                        <input type="text" id="doc-name" name="doc-name" placeholder="Dr. Abdul Jamal Karim">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-gender">Gender</label>
+                        <select id="doctor-gender" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="ohter">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-phone">Phone Number</label>
+                        <input type="tel" id="doctor-phone" name="phone" placeholder="e.g. +88023456734">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-email">Email Address</label>
+                        <input type="email" id="doctor-email" name="doctor-email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-password">Password</label>
+                        <input type="password" id="doctor-password" name="doctor-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-specialty">Specialty</label>
+                        <input type="text" id="doctor-specialty" name="doctor-specialty" placeholder="Cardiology">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="doctor-fee">Consultation Fee (BDT)</label>
+                        <input type="number" id="doctor-fee" name="doctor-fee" placeholder="1000" step="any">
+                    </div>
+                    <button type="submit"
+                        class="form-button-submit animated-button gradient-blue-green">Register</button>
+                </form>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+        <section id="admin-pharmacist-registration" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Staff Registration</h2>
+                <p class="page-intro-text">For support staff and pharmacists.</p>
+                <form class="styled-form">
+                    <div class="form-field-group">
+                        <label for="staff-name">Full Name</label>
+                        <input type="text" id="staff-name" name="staff-name" placeholder="Ali Khadry">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="staff-phone">Phone Number</label>
+                        <input type="tel" id="staff-phone" name="phone" placeholder="e.g. +88023456734">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="staff-email">Email Address</label>
+                        <input type="email" id="staff-email" name="staff-email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="staff-password">Password</label>
+                        <input type="password" id="staff-password" name="staff-password" placeholder="••••••••">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="staff-gender">Gender</label>
+                        <select id="staff-gender" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="ohter">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="staff-role">Role</label>
+                        <select id="staff-role" name="staff-role">
+                            <option>Admin</option>
+                            <option>Pharmacist</option>
+                            <option>Support Staff</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="form-button-submit animated-button gradient-blue-green">Register</button>
+                </form>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+        <section id="login" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Log In to Cosmic Cure</h2>
+                <p class="page-intro-text">Access your personalized dashboard.</p>
+                <form class="styled-form login-form-max-width">
+                    <div class="form-field-group">
+                        <label for="profileTypeSelect">Profile Type:</label>
+                        <select id="profileTypeSelect" class="styled-input">
+                            <option value="">Select Profile</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="admin">Admin</option>
+                            <option value="pharmacist">Pharmacist</option>
+                        </select>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="login-email" placeholder="you@example.com"
+                            value=" ">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="login-password">Password</label>    
+                        <input type="password" id="loginPassword" name="login-password" placeholder="••••••••"
+                            value="">
+                    </div>
+                    <p id="loginError" class="error-message"></p>
+                    <button type="button" id="loginBtn"
+                        class="form-button-submit animated-button gradient-blue-green">Log In</button>
+                </form>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+                <section id="patient-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="patient-welcome-message">Welcome, Patient!</h2>
+                <p class="page-intro-text">Your Personal Health Dashboard.</p>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card card-hover-effect">
+                        <h3 class="card-name ">My Appointments</h3>
+                        <p class="card-info" id="next-appointment-info">No upcoming appointments.</p>
+                        <button class="button-profile animated-button" onclick="showPage('book-appointment')">Book
+                            New</button>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <h3 class="card-name">My Prescriptions</h3>
+                        <p class="card-info">Active: Amoxicillin 500mg (Ends 2025-06-15)</p>
+                        <button class="button-profile animated-button" onclick="showPage('patient-prescriptions-page')">Refill</button>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <h3 class="card-name">My Records</h3>
+                        <p class="card-info">View your complete patient history.</p>
+                        <button class="button-profile animated-button" onclick="showPage('patient-records')">View Records</button>
+                    </div>
+                </div>
+                <div class="content-block chat-doctor-section">
+                    <h3 class="block-title">Chat with Your Doctor</h3>
+                    <div class="chat-messages" id="patientChatMessages">
+                        <div class="chat-message bot-message">Hello Patient Badhon! How can I assist you today?</div>
+                        <div class="chat-message user-message">Hi Dr. Sarah Chen, I have a question about my recent lab
+                            results.</div>
+                        <div class="chat-message bot-message">Please specify your query. I'm here to help.</div>
+                        <div class="loading-chat hidden" id="patientChatLoading">Doctor is typing...</div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="patientChatMessageInput" placeholder="Type your message...">
+                        <button id="sendPatientChatMessage" class="form-button-submit animated-button chat-send-button">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="chat-send-icon">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="button-primary animated-button emergency-link-button"
+                    onclick="showPage('patient-emergency')">
+                    Emergency Help
+                </button>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="book-appointment" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Book a New Appointment</h2>
+                <p class="page-intro-text">Select your preferred doctor, date, and time</p>
+                <form class="styled-form">
+                    <div class="form-field-group">
+                        <label for="doctorSelect">Select Doctor:</label>
+                        <select id="doctorSelect" class="styled-input">
+                            <option value="">-- Choose a Doctor --</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="appointmentDate">Date:</label>
+                        <input type="date" id="appointmentDate" class="styled-input">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="appointmentTime">Time:</label>
+                        <input type="time" id="appointmentTime" class="styled-input">
+                    </div>
+                    <div class="form-field-group">
+                        <label for="appointmentReason">Reason for Visit:</label>
+                        <textarea id="appointmentReason" name="reason" rows="4"
+                            placeholder="Briefly describe your issue..."></textarea>
+                    </div>
+                    <p id="appointmentMessage" class="appointment-message"></p>
+                    <button type="button" id="confirmAppointmentBtn"
+                        class="form-button-submit animated-button gradient-blue-green">Confirm Appointment</button>
+                </form>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to
+                    Dashboard</button>
+            </div>
+        </section>
+
+        <section id="patient-emergency" class="page-section form-page-layout emergency-section">
+            <div class="form-container-styled">
+                <h2 class="emergency-title ">In Case of Emergency</h2>
+                <p class="emergency-text">Press the button below for immediate assistance. This will
+                    alert emergency services and your registered emergency contacts.</p>
+                <button class=" animated-button emergency-button"
+                    onclick="sendEmergencyAlert()">
+                    EMERGENCY
+                </button>
+                <p class="placeholder-text emergency-disclaimer">Only use in real emergency situations.</p>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Patient
+                    Dashboard</button>
+            </div>
+        </section>
+
+        <section id="patient-records" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">My Records</h2>
+                <div id="patient-history-container">
+                    <!-- Patient details will be loaded here -->
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+        <section id="doctor-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="doctor-welcome-message">Welcome, Doctor!</h2>
+                <p class="page-intro-text">Your Professional Dashboard.</p>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">Today's Appointments</h3>
+                        <p class="card-info"><span id="appointments-today-count">0</span> appointments pending.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-schedule-page')">View Schedule</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Patient Records</h3>
+                        <p class="card-info">Access and manage your patient records.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-records-page')">Access Records</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Telemedicine Calls</h3>
+                        <p class="card-info">Next call: Patient A. Khan at 11:30 AM.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-telemedicine-page')">Start Call</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="doctor-schedule-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Today's Schedule</h2>
+                <div id="doctor-schedule-container-page" class="content-block"></div>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="doctor-records-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Patient Records</h2>
+                <div id="doctor-records-container-page" class="content-block"></div>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="patient-prescriptions-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">My Prescriptions</h2>
+                <p>This is a static page for patient prescriptions.</p>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="doctor-telemedicine-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Telemedicine</h2>
+                <p>This is a static page for telemedicine calls.</p>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-reports-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Financial Reports</h2>
+                <p>This Feauture is on our roadmap for future integration.</p>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-wards-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Ward Management</h2>
+                <p>This Feauture is on our roadmap for future integration.</p>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-inventory-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Inventory Alerts</h2>
+                <p>This Feauture is on our roadmap for future integration..</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-prescriptions-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Prescription Requests</h2>
+                <p>This Feauture is on our roadmap for future integration.</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-sales-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Sales Overview</h2>
+                <p>This Feauture is on our roadmap for future integration.</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="admin-welcome-message">Welcome, Admin!</h2>
+                <p class="page-intro-text">Hospital Management Overview.</p>
+                <div class="grid-layout admin-stats-grid">
+                    <div class="stat-card stat-card-blue">
+                        <h3 class="stat-value">1500+</h3>
+                        <p class="stat-label">Total Patients</p>
+                    </div>
+                    <div class="stat-card stat-card-green">
+                        <h3 class="stat-value">50+</h3>
+                        <p class="stat-label">Active Doctors</p>
+                    </div>
+                    <div class="stat-card stat-card-yellow">
+                        <h3 class="stat-value">120</h3>
+                        <p class="stat-label">Appointments Today</p>
+                    </div>
+                    <div class="stat-card stat-card-red">
+                        <h3 class="stat-value">15%</h3>
+                        <p class="stat-label">Bed Occupancy</p>
+                    </div>
+                </div>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">User Management</h3>
+                        <p class="card-info">Total users: 1500. Pending registrations: 5.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-management')">Manage Users</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Emergency Alerts</h3>
+                        <p class="card-info" id="emergency-alerts-count">No new alerts.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-emergency-alerts')">View Alerts</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Financial Reports</h3>
+                        <p class="card-info">Last month's income: BDT- 100 000 000. Expenditure: BDT- 100 000.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-reports-page')">View Reports</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Ward Management</h3>
+                        <p class="card-info">Occupancy: 85%. Available beds: 30.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-wards-page')">Manage Wards</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="admin-management" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">User Management</h2>
+
+                <!-- Horizontal Navigation -->
+                <div class="admin-nav">
+                    <a href="#" id="nav-patients" class="admin-nav-item active" onclick="switchAdminTab('patients')">Manage Patients</a>
+                    <a href="#" id="nav-doctors" class="admin-nav-item" onclick="switchAdminTab('doctors')">Manage Doctors</a>
+                    <a href="#" id="nav-staff" class="admin-nav-item" onclick="switchAdminTab('staff')">Manage Staff</a>
+                </div>
+
+                <!-- Content Panels -->
+                <div id="patients-panel" class="admin-panel">
+                    <div id="patients-list-container" class="user-list-container"></div>
+                    <button class="button-secondary  animated-button page-level-button" onclick="showUserForm('patients', 'add')">Add Patient</button>
+                </div>
+
+                <div id="doctors-panel" class="admin-panel" style="display: none;">
+                    <div id="doctors-list-container" class="user-list-container"></div>
+                    <button class="button-secondary  animated-button page-level-button" onclick="showUserForm('doctors', 'add')">Add Doctor</button>
+                </div>
+
+                <div id="staff-panel" class="admin-panel" style="display: none;">
+                    <div id="staff-list-container" class="user-list-container"></div>
+                    <button class="button-secondary  animated-button page-level-button" onclick="showUserForm('staff', 'add')">Add Staff</button>
+                </div>
+
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Admin Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-emergency-alerts" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Emergency Alerts</h2>
+                <div id="emergency-alerts-list" class="user-list-container"></div>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Admin Dashboard</button>
+            </div>
+        </section>
+        <div id="admin-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-content form-container-styled">
+                <button class="modal-close-button" onclick="closeAdminModal()">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+        <section id="pharmacy-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="pharmacy-welcome-message">Welcome, Pharmacist!</h2>
+                <p class="page-intro-text">Pharmacy Operations Dashboard.</p>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">Inventory Alerts</h3>
+                        <p class="card-info">Low stock: 12 items. Expiring soon: 5 items.</p>
+                        <button class="button-profile animated-button" onclick="showPage('pharmacy-inventory-page')">View Alerts</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Prescription Requests</h3>
+                        <p class="card-info">New requests: 7. Pending fulfillment: 3.</p>
+                        <button class="button-profile animated-button" onclick="showPage('pharmacy-prescriptions-page')">Process Requests</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Sales Overview</h3>
+                        <p class="card-info">Today's sales: BDT- 100 000.</p>
+                        <button class="button-profile animated-button" onclick="showPage('pharmacy-sales-page')">View Sales</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="patient-emergency" class="page-section form-page-layout emergency-section">
+            <div class="form-container-styled">
+                <h2 class="emergency-title ">In Case of Emergency</h2>
+                <p class="emergency-text">Press the button below for immediate assistance. This will
+                    alert emergency services and your registered emergency contacts.</p>
+                <button class=" animated-button emergency-button"
+                    onclick="sendEmergencyAlert()">
+                    EMERGENCY
+                </button>
+                <p class="placeholder-text emergency-disclaimer">Only use in real emergency situations.</p>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Patient
+                    Dashboard</button>
+            </div>
+        </section>
+
+        <section id="patient-records" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">My Records</h2>
+                <div id="patient-history-container">
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+        <section id="doctor-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="doctor-welcome-message">Welcome, Doctor!</h2>
+                <p class="page-intro-text">Your Professional Dashboard.</p>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">Today's Appointments</h3>
+                        <p class="card-info"><span id="appointments-today-count">0</span> appointments pending.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-schedule-page')">View Schedule</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Patient Records</h3>
+                        <p class="card-info">Access and manage your patient records.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-records-page')">Access Records</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Telemedicine Calls</h3>
+                        <p class="card-info">Next call: Patient A. Khan at 11:30 AM.</p>
+                        <button class="button-profile animated-button" onclick="showPage('doctor-telemedicine-page')">Start Call</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="doctor-schedule-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Today's Schedule</h2>
+                <div id="doctor-schedule-container-page" class="content-block"></div>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="doctor-records-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Patient Records</h2>
+                <div id="doctor-records-container-page" class="content-block"></div>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="patient-prescriptions-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">My Prescriptions</h2>
+                <p>Already Sent to The Pharmacy.</p>
+                <button class="button-secondary animated-button" onclick="showPage('patient-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="doctor-telemedicine-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Telemedicine</h2>
+                <p>This is a static page for telemedicine calls.</p>
+                <button class="button-secondary animated-button" onclick="showPage('doctor-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-reports-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Financial Reports</h2>
+                <p>This is a static page for financial reports.</p>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-wards-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Ward Management</h2>
+                <p>This Feauture is on our roadmap for future integration..</p>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-inventory-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Inventory Alerts</h2>
+                <p>This is a static page for pharmacy inventory alerts.</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-prescriptions-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Prescription Requests</h2>
+                <p>This is a static page for pharmacy prescription requests.</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="pharmacy-sales-page" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Sales Overview</h2>
+                <p>This is a static page for pharmacy sales overview.</p>
+                <button class="button-secondary animated-button" onclick="showPage('pharmacy-profile')">Back to Dashboard</button>
+            </div>
+        </section>
+
+        <section id="admin-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="admin-welcome-message">Welcome, Admin!</h2>
+                <p class="page-intro-text">Hospital Management Overview.</p>
+                <div class="grid-layout admin-stats-grid">
+                    <div class="stat-card stat-card-blue">
+                        <h3 class="stat-value">1500+</h3>
+                        <p class="stat-label">Total Patients</p>
+                    </div>
+                    <div class="stat-card stat-card-green">
+                        <h3 class="stat-value">50+</h3>
+                        <p class="stat-label">Active Doctors</p>
+                    </div>
+                    <div class="stat-card stat-card-yellow">
+                        <h3 class="stat-value">120</h3>
+                        <p class="stat-label">Appointments Today</p>
+                    </div>
+                    <div class="stat-card stat-card-red">
+                        <h3 class="stat-value">15%</h3>
+                        <p class="stat-label">Bed Occupancy</p>
+                    </div>
+                </div>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">User Management</h3>
+                        <p class="card-info">Total users: 1500. Pending registrations: 5.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-management')">Manage Users</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Emergency Alerts</h3>
+                        <p class="card-info" id="emergency-alerts-count">No new alerts.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-emergency-alerts')">View Alerts</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Financial Reports</h3>
+                        <p class="card-info">Last month's income: BDT- 100 000 000. Expenditure: BDT- 100 000.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-reports-page')">View Reports</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Ward Management</h3>
+                        <p class="card-info">Occupancy: 85%. Available beds: 30.</p>
+                        <button class="button-profile animated-button" onclick="showPage('admin-wards-page')">Manage Wards</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+        <section id="admin-management" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">User Management</h2>
+                <!-- Horizontal Navigation -->
+                <div class="admin-nav">
+                    <a href="#" id="nav-patients" class="admin-nav-item active" onclick="switchAdminTab('patients')">Manage Patients</a>
+                    <a href="#" id="nav-doctors" class="admin-nav-item" onclick="switchAdminTab('doctors')">Manage Doctors</a>
+                    <a href="#" id="nav-staff" class="admin-nav-item" onclick="switchAdminTab('staff')">Manage Staff</a>
+                </div>
+                <!-- Content Panels -->
+                <div id="patients-panel" class="admin-panel">
+                    <div id="patients-list-container" class="user-list-container"></div>
+                    <button class="button-secondary  animated-button page-level-button" onclick="showUserForm('patients', 'add')">Add Patient</button>
+                </div>
+
+                <div id="doctors-panel" class="admin-panel" style="display: none;">
+                    <div id="doctors-list-container" class="user-list-container"></div>
+                    <button class="button-primary animated-button page-level-button" onclick="showUserForm('doctors', 'add')">Add Doctor</button>
+                </div>
+
+                <div id="staff-panel" class="admin-panel" style="display: none;">
+                    <div id="staff-list-container" class="user-list-container"></div>
+                    <button class="button-primary animated-button page-level-button" onclick="showUserForm('staff', 'add')">Add Staff</button>
+                </div>
+
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Admin Dashboard</button>
+            </div>
+        </section>
+
+                <section id="admin-emergency-alerts" class="page-section content-page-wrapper">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Emergency Alerts</h2>
+                <div id="emergency-alerts-list" class="user-list-container"></div>
+                <button class="button-secondary animated-button" onclick="showPage('admin-profile')">Back to Admin Dashboard</button>
+            </div>
+        </section>
+        <div id="admin-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-content form-container-styled">
+                <button class="modal-close-button" onclick="closeAdminModal()">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+        <section id="pharmacy-profile" class="page-section content-page-wrapper profile-page">
+            <div class="content-container-styled">
+                <h2 class="page-title-main" id="pharmacy-welcome-message">Welcome, Pharmacist!</h2>
+                <p class="page-intro-text">Pharmacy Operations Dashboard.</p>
+                <div class="grid-layout profile-info-grid">
+                    <div class="info-card">
+                        <h3 class="card-name">Inventory Alerts</h3>
+                        <p class="card-info">Low stock: 12 items. Expiring soon: 5 items.</p>
+                        <button class="button-profile animated-button">View Alerts</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Prescription Requests</h3>
+                        <p class="card-info">New requests: 7. Pending fulfillment: 3.</p>
+                        <button class="button-profile animated-button">Process Requests</button>
+                    </div>
+                    <div class="info-card">
+                        <h3 class="card-name">Sales Overview</h3>
+                        <p class="card-info">Today's sales: BDT- 100 000.</p>
+                        <button class="button-profile animated-button">View Sales</button>
+                    </div>
+                </div>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+        <section id="services" class=" page-section content-block  form-page-layout">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Our Full Range of Medical Services</h2>
+                <p class="page-intro-text">Cosmic Cure offers specialized care across various medical disciplines.</p>
+                <div class="grid-layout doctors-detailed-grid specialists-grid">
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">❤️</span>
+                        <h4 class="card-name">Cardiology</h4>
+                        <p class="card-info">Heart health, diagnostics, and surgical interventions.</p>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">🦴</span>
+                        <h4 class="card-name">Orthopedics</h4>
+                        <p class="card-info">Bone and joint care, sports injuries, and rehabilitation.</p>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">👁️</span>
+                        <h4 class="card-name">Ophthalmology</h4>
+                        <p class="card-info">Eye care, vision correction, and treatment of eye diseases.</p>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">🦷</span>
+                        <h4 class="card-name">Dentistry</h4>
+                        <p class="card-info">Comprehensive dental health, from routine check-ups to complex procedures.
+                        </p>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">🧪</span>
+                        <h4 class="card-name">Pathology & Lab</h4>
+                        <p class="card-info">Accurate diagnostic testing and comprehensive lab services.</p>
+                    </div>
+                    <div class="info-card card-hover-effect">
+                        <span class="icon-emoji">💊</span>
+                        <h4 class="card-name">General Medicine</h4>
+                        <p class="card-info">Primary care, preventive health, and management of chronic conditions.</p>
+                    </div>
+                </div>
+                <button class="form-button-submit animated-button gradient-blue-green">
+                    View All Specialties
+                </button>
+
+            </div>
+        </section>
+        <section id="doctors" class="page-section content-page-wrapper ">
+            <div class="content-container-styled">
+                <h2 class="page-title-main">Meet Our Expert Doctors</h2>
+                <p class="page-intro-text">Highly skilled and compassionate professionals dedicated to your health.</p>
+                <div class="grid-layout doctors-detailed-grid">
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Zahid Ali" alt="Dr. Zahid Ali"
+                            class="profile-image-large doctor-image-animate">
+                        <h4 class="card-name">Dr. Zahid Ali</h4>
+                        <p class="card-specialty-doctor">General Surgeon</p>
+                        <p class="card-info">Specializes in minimally invasive surgical techniques.</p>
+                        <button class="button-profile animated-button">View Profile</button>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Hossan" alt="Dr. Imaran Hossain"
+                            class="profile-image-large doctor-image-animate">
+                        <h4 class="card-name">Dr. Imaran Hossain</h4>
+                        <p class="card-specialty-doctor">Dermatologist</p>
+                        <p class="card-info">Expert in skin conditions and cosmetic dermatology.</p>
+                        <button class="button-profile animated-button">View Profile</button>
+                    </div>
+                    <div class="info-card card-hover-effect card-entry-animation" style="animation-delay: 0.2s;">
+                        <img src="https://placehold.co/150x150/e0f2f7/0e7490?text=Dr.+Saba" alt="Dr. Saba"
+                            class="profile-image-large doctor-image-animate">
+                        <h4 class="card-name">Dr.Saba Khan</h4>
+                        <p class="card-specialty-doctor">Endocrinologist</p>
+                        <p class="card-info">Focuses on hormonal disorders and metabolic health.</p>
+                        <button class="button-profile animated-button">View Profile</button>
+                    </div>
+                </div>
+                <button class="button-primary page-level-button animated-button doctors-page-button">
+                    Find Your Doctor
+                </button>
+            </div>
+        </section>
+        <section id="about" class="page-section">
+            <div class="content-page-container about-us-container">
+                <h2 class="page-main-title">About Cosmic Cure</h2>
+                <p class="page-subtitle about-intro">
+                    Cosmic Cure is a leading healthcare institution dedicated to providing exceptional medical care with
+                    a patient-centric approach.
+                    Our mission is to combine cutting-edge technology with compassionate service to ensure the best
+                    possible outcomes for our patients.
+                </p>
+                <div class="about-details-grid">
+                    <div class="about-card">
+                        <h3 class="about-card-title">Our Vision</h3>
+                        <p>
+                            To be a beacon of health and healing, recognized globally for our innovative treatments,
+                            research excellence, and unwavering commitment to patient well-being.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3 class="about-card-title">Our Values</h3>
+                        <ul>
+                            <li>Compassion & Empathy</li>
+                            <li>Excellence in Care</li>
+                            <li>Innovation & Research</li>
+                            <li>Integrity & Trust</li>
+                            <li>Patient-Centered Approach</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-button-container">
+                    <button class="page-action-button animated-button about-story-button">
+                        Learn More About Our Story
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="page-section form-page-layout">
+            <div class="form-container-styled">
+                <h2 class="page-title-main">Contact Us</h2>
+                <p class="page-intro-text">We're here to help. Reach out to us through any of the following channels.
+                </p>
+                <p class="contact-info-text">Phone: (123) 456-7890<br>Email: info@cosmiccure.com<br>Address: 123, Cosmic
+                    city</p>
+                <button class="button-secondary animated-button" onclick="showPage('home')">Back to Home</button>
+            </div>
+        </section>
+
+    </main>
+    <footer class="site-footer-main">
+        <div class="footer-grid-container">
+
+            <div class="footer-cta-buttons">
+                <a href="#" class="footer-action-button animated-button gradient-blue-green"
+                    onclick="showPage('patient-registration')">
+                    Book an Appointment
+                </a>
+                <a href="#" class="footer-action-button animated-button footer-contact-style"
+                    onclick="showPage('contact')">
+                    Contact Support
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom-text-container">
+            <p class="footer-site-tagline">Your Health, Our Priority.</p>
+            <p class="footer-copy-info">&copy; 2025 Cosmic Cure. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="chatbot-icon" id="chatbot-icon">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+          <rect x="9" y="18" width="30" height="24" rx="2" fill="#2F88FF" stroke="#000000" stroke-width="4"/>
+          <circle cx="17" cy="26" r="2" fill="white"/>
+          <circle cx="31" cy="26" r="2" fill="white"/>
+          <path d="M20 32C18.8954 32 18 32.8954 18 34C18 35.1046 18.8954 36 20 36V32ZM28 36C29.1046 36 30 35.1046 30 34C30 32.8954 29.1046 32 28 32V36ZM20 36H28V32H20V36Z" fill="white"/>
+          <path d="M24 10V18" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 26V34" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M44 26V34" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="8" r="2" stroke="#000000" stroke-width="4"/>
+        </svg>
+      </div>
+      
+      <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+          <h3>CosmicBot</h3>
+          <button class="close-chatbot" id="close-chatbot">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+          <div class="message bot-message">Hello! I'm CosmicBot. How can I help you today?</div>
+        </div>
+        <div class="chatbot-input-container">
+          <input type="text" id="chatbot-input" placeholder="Type your message...">
+          <button id="chatbot-send-btn">Send</button>
+        </div>
+      </div>
+      
+</body>
+
+</html>

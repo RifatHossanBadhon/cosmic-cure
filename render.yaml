@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: cosmic-cure
+    env: java
+    javaVersion: 21
+    plan: free
+    buildCommand: "./mvnw package -DskipTests"
+    startCommand: "java -jar target/backend-0.0.1-SNAPSHOT.jar"
+    healthCheckPath: "/actuator/health"
+    envVars:
+      - key: SERVER_PORT
+        value: 10000

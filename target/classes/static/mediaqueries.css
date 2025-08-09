@@ -1,0 +1,159 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+@media (max-width: 767px) {
+    .site-header {
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo-container {
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%; 
+    }
+    .main-nav {
+        order: 3;
+        width: 100%;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+    .theme-toggle-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        margin-left: 0;
+    }
+    .site-title {
+        font-size: 1.2rem;
+    }
+    .logo-img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .hero-slideshow-wrapper {
+        height: 300px;
+    }
+    .hero-main-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    .hero-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-cta-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+        top: 0;
+    }
+    .dots-navigation-container {
+        bottom: 0.75rem;
+    }
+    .block-title {
+        font-size: 1.5rem;
+    }
+    .card-name,
+    .card-heading {
+        font-size: 1.1rem;
+    }
+    .news-updates-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .profile-info-grid,
+    .admin-stats-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+        flex-wrap: nowrap; 
+    }
+    .logo-container {
+        margin-bottom: 0;
+        width: auto;
+    }
+    .main-nav {
+        order: 0; 
+    }
+    .hero-slideshow-wrapper {
+        height: 550px;
+    }
+    .hero-main-title {
+        font-size: 3rem;
+    }
+    .hero-tagline {
+        font-size: 1.25rem;
+    }
+    .specialists-grid,
+    .services-overview-grid,
+    .doctors-detailed-grid,
+    .profile-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .styled-form {
+        max-width: 30rem;
+    }
+    .login-form-max-width {
+        max-width: 20rem;
+    }
+    .footer-cta-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .site-header {
+        padding: 1rem 3rem;
+    }
+    .hero-slideshow-wrapper {
+        height: 700px;
+    }
+    .hero-main-title {
+        font-size: 3.75rem;
+    }
+    .hero-tagline {
+        font-size: 1.5rem;
+    }
+    .specialists-grid,
+    .services-overview-grid,
+    .doctors-detailed-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .news-updates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .profile-info-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .admin-stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .styled-form {
+        max-width: 36rem;
+    }
+    .login-form-max-width {
+        max-width: 28rem;
+    }
+    .footer-cta-buttons {
+        gap: 1.5rem;
+    }
+}
