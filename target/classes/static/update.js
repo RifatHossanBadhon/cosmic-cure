@@ -26,7 +26,7 @@ function updateNextAppointment() {
         return;
     }
 
-    fetch(`http://localhost:8080/api/appointments/patient/${userId}`)
+    fetch(`/api/appointments/patient/${userId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch appointments.');
