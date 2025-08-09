@@ -16,7 +16,7 @@ RUN mvn clean install
 
 
 # Use a smaller, official OpenJDK image to run the application
-FROM openjdk:21-jre-slim
+FROM eclipse-temurin:21-jre-jammy
 
 # Set the working directory
 WORKDIR /app
