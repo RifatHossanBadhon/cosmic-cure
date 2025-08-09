@@ -10,7 +10,7 @@ function switchAdminTab(type) {
 
 async function fetchData(type) {
     try {
-        const response = await fetch(`http://localhost:8080/api/${type}`);
+        const response = await fetch(`/api/${type}`);
         if (!response.ok) {
             const errorText = await response.text();
             console.error(`Failed to fetch ${type}:`, response.status, errorText);
@@ -27,7 +27,7 @@ async function fetchData(type) {
 
 async function deleteData(type, id) {
     try {
-        const response = await fetch(`http://localhost:8080/api/${type}/${id}`, {
+        const response = await fetch(`/api/${type}/${id}`, {
             method: 'DELETE',
         });
         if (!response.ok) {
@@ -141,7 +141,7 @@ async function addUser(type) {
         data.role = type.slice(0, -1).toUpperCase();
     }
 
-    const url = `http://localhost:8080/api/auth/register`;
+    const url = `/api/auth/register`;
     const method = 'POST';
 
     try {
@@ -170,7 +170,7 @@ async function updateUser(type, id) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
-    const url = `http://localhost:8080/api/${type}/${id}`;
+    const url = `/api/${type}/${id}`;
     const method = 'PUT';
 
     try {
@@ -247,7 +247,7 @@ async function sendEmergencyAlert() {
             const longitude = position.coords.longitude;
 
             try {
-                const response = await fetch('http://localhost:8080/api/emergency/alert', {
+                const response = await fetch('/api/emergency/alert', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -286,7 +286,7 @@ async function renderEmergencyAlerts() {
     alertsContainer.innerHTML = 'Loading emergency alerts...';
 
     try {
-        const response = await fetch('http://localhost:8080/api/emergency/alerts');
+        const response = await fetch('/api/emergency/alerts');
         if (!response.ok) {
             throw new Error('Failed to fetch emergency alerts.');
         }
@@ -330,14 +330,14 @@ async function viewPatientHistory(patientId) {
     openAdminModal();
 
     try {
-        const userResponse = await fetch(`http://localhost:8080/api/patients/${patientId}/user`);
+        const userResponse = await fetch(`/api/patients/${patientId}/user`);
         if (!userResponse.ok) {
             throw new Error('Failed to fetch user details.');
         }
         const user = await userResponse.json();
         const userId = user.id;
 
-        const response = await fetch(`http://localhost:8080/api/patients/user/${userId}/history`);
+        const response = await fetch(`/api/patients/user/${userId}/history`);
         if (!response.ok) {
             throw new Error('Failed to fetch patient history.');
         }
@@ -360,7 +360,7 @@ async function viewPatientHistory(patientId) {
 async function deleteEmergencyAlert(alertId) {
     if (confirm('Are you sure you want to delete this emergency alert?')) {
         try {
-            const response = await fetch(`http://localhost:8080/api/emergency/alerts/${alertId}`, {
+            const response = await fetch(`/api/emergency/alerts/${alertId}`, {
                 method: 'DELETE',
             });
 
