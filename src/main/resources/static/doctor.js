@@ -1,8 +1,9 @@
+//check
 async function updateDoctorDashboard() {
     const doctorId = localStorage.getItem('userId');
     if (!doctorId) return;
     try {
-        const response = await fetch(`http://localhost:8080/api/appointments/count/today?doctorId=${doctorId}`);
+        const response = await fetch(`/api/appointments/count/today?doctorId=${doctorId}`);
         if (response.ok) {
             const count = await response.json();
             document.getElementById('appointments-today-count').textContent = count;
@@ -18,7 +19,7 @@ async function viewDoctorSchedule() {
     scheduleContainer.innerHTML = 'Loading...';
 
     try {
-        const response = await fetch(`http://localhost:8080/api/appointments/schedule/today?doctorId=${doctorId}`);
+        const response = await fetch(`/api/appointments/schedule/today?doctorId=${doctorId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch schedule.');
         }
@@ -54,7 +55,7 @@ async function accessDoctorRecords() {
     recordsContainer.innerHTML = 'Loading...';
 
     try {
-        const response = await fetch(`http://localhost:8080/api/doctors/${doctorId}/patients`);
+        const response = await fetch(`/api/doctors/${doctorId}/patients`);
         if (!response.ok) {
             throw new Error('Failed to fetch patient records.');
         }
@@ -88,12 +89,12 @@ async function viewPatientRecordsForDoctor(patientId) {
     openAdminModal();
 
     try {
-        const patientResponse = await fetch(`http://localhost:8080/api/patients/${patientId}`);
+        const patientResponse = await fetch(`/api/patients/${patientId}`);
         if (!patientResponse.ok) {
             throw new Error('Failed to fetch patient details.');
         }
         const patient = await patientResponse.json();
-        const appointmentsResponse = await fetch(`http://localhost:8080/api/appointments/patient/${patientId}`);
+        const appointmentsResponse = await fetch(`/api/appointments/patient/${patientId}`);
         if (!appointmentsResponse.ok) {
             throw new Error('Failed to fetch appointments.');
         }
@@ -140,7 +141,7 @@ async function fetchDoctorsAndPopulateDropdown() {
     doctorSelect.innerHTML = '<option value="">-- Choose a Doctor --</option>'; 
 
     try {
-        const response = await fetch('http://localhost:8080/api/appointments/doctors');
+        const response = await fetch('/api/appointments/doctors');
         if (!response.ok) {
             throw new Error('Failed to fetch doctors.');
         }
