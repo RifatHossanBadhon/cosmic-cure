@@ -324,32 +324,34 @@ async function renderEmergencyAlerts() {
     }
 }
 
-async function viewPatientHistory(patientId) {
+    async function viewPatientHistory(userId) {
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = 'Loading patient history...';
     openAdminModal();
-
+  
     try {
-        const userResponse = await fetch(`/api/patients/${patientId}/user`);
-        if (!userResponse.ok) {
-            throw new Error('Failed to fetch user details.');
-        }
-        const user = await userResponse.json();
-        const userId = user.id;
-
         const response = await fetch(`/api/patients/user/${userId}/history`);
+        
         if (!response.ok) {
-            throw new Error('Failed to fetch patient history.');
+            const errorText = await response.text();
+            console.error('Failed to fetch patient history:', errorText);
+            throw new Error(`Failed to fetch patient history: ${errorText}`);
         }
+  
         const history = await response.json();
-
+  
         let html = '<h3>Patient History</h3>';
-        html += `<p><strong>Name:</strong> ${history.fullName}</p>`;
-        html += `<p><strong>Date of Birth:</strong> ${new Date(history.dob).toLocaleDateString()}</p>`;
-        html += `<p><strong>Gender:</strong> ${history.gender}</p>`;
-        html += `<p><strong>Phone:</strong> ${history.phone}</p>`;
-        html += `<p><strong>Address:</strong> ${history.address}</p>`;
-
+  
+        if (history) {
+            html += `<p><strong>Name:</strong> ${history.fullName || 'N/A'}</p>`;
+            html += `<p><strong>Date of Birth:</strong> ${history.dob ? new Date(history.dob).toLocaleDateString() : 'N/A'}</p>`;
+            html += `<p><strong>Gender:</strong> ${history.gender || 'N/A'}</p>`;
+            html += `<p><strong>Phone:</strong> ${history.phone || 'N/A'}</p>`;
+            html += `<p><strong>Address:</strong> ${history.address || 'N/A'}</p>`;
+        } else {
+            html += '<p>No history found for this patient.</p>';
+        }
+  
         modalBody.innerHTML = html;
     } catch (error) {
         console.error('Error fetching patient history:', error);
